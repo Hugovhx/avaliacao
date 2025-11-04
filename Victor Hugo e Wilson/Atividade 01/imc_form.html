@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <style>
+        body {
+            php -S localhost:8000
+
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input[type="number"],
+        input[type="submit"] {
+            width: calc(100% - 22px);
+            /* Ajuste para padding e border */
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+            /* Garante que padding e border não aumentem a largura total */
+        }
+
+        .radio-group {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+            margin-bottom: 25px;
+        }
+
+        .radio-group label {
+            display: inline-flex;
+            /* Permite alinhar o input com o texto */
+            align-items: center;
+            font-weight: normal;
+        }
+
+        .radio-group input[type="radio"] {
+            margin-right: 8px;
+            /* Espaço entre o radio e o texto */
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Calculadora de IMC</h2>
+        <form action="imc.php" method="POST">
+            <div class="form-group">
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso" name="peso" step="0.01" min="0" required placeholder="Ex: 70.5">
+            </div>
+
+            <div class="form-group">
+                <label for="altura">Altura (m):</label>
+                <input type="number" id="altura" name="altura" step="0.01" min="0" required placeholder="Ex: 1.75">
+            </div>
+
+            <div class="form-group">
+                <label>Gênero:</label>
+                <div class="radio-group">
+                    <label for="genero_m">
+                        <input type="radio" id="genero_m" name="genero" value="masculino" required> Masculino
+                    </label>
+                    <label for="genero_f">
+                        <input type="radio" id="genero_f" name="genero" value="feminino" required> Feminino
+                    </label>
+                </div>
+            </div>
+
+            <input type="submit" value="Calcular IMC">
+        </form>
+    </div>
+</body>
+
+</html>
